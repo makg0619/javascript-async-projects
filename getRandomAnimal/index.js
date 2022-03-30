@@ -14,4 +14,11 @@ function getRandomDogs() {
       }})
 }
 
+function getRandomFoxs() {
+  fetch('https://randomfox.ca/floof/')
+    .then((response) => response.json())
+    .then((data) => fox_result.innerHTML = `<img src=${data.image}>` )
+}
+
+fox_btn.addEventListener('click', getRandomFoxs);
 dog_btn.addEventListener('click', getRandomDogs);
